@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import YouTube from "react-youtube";
+
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 export const YoutubePlayer = ({ }) => {
   const [videos, setVideos] = useState([])
@@ -38,7 +40,10 @@ export const YoutubePlayer = ({ }) => {
 
   return (
     <div className="card">
-        <YouTube videoId={pickRandomVideo()} opts={opts} onReady={_onReady} />
+      <LiteYouTubeEmbed
+          id={pickRandomVideo()}
+          title="What’s new in Material Design for the web (Chrome Dev Summit 2019)"
+        />
     </div>
   )
 }
